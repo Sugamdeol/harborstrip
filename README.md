@@ -54,11 +54,11 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-11 unit/CLI tests plus browser interaction tests cover canary removal, unknown fields, aliases, malformed inputs, reports, downloads, filters, themes, pagination and five responsive widths. See [TESTING](docs/TESTING.md) for the exact observed result. GitHub Actions configuration is provided; remote run status is unverified until repository publication.
+11 unit/CLI tests plus browser interaction tests cover canary removal, unknown fields, aliases, malformed inputs, reports, downloads, filters, themes, pagination and five responsive widths. See [TESTING](docs/TESTING.md) for the exact observed result. GitHub Actions runs these checks on pushes and pull requests. [CI status](https://github.com/Sugamdeol/harborstrip/actions).
 
 ## Structure and hosting
 
-`src/core.js` is the privacy boundary. `public/app.js` handles controls. `scripts/cli.js` uses the same core. `scripts/build.js` copies it into the static output. Host `public/` after building. No `.env` values or API keys required. [Architecture](docs/ARCHITECTURE.md) · [Privacy](docs/PRIVACY.md) · [Deployment/cost](docs/DEPLOYMENT.md).
+`src/core.js` is the privacy boundary. `public/app.js` handles controls. `scripts/cli.js` uses the same core. `scripts/build.js` copies it into the static output. Host `dist/` after building. Production runs on Vercel with automatic deployment from `main`. No `.env` values or API keys required. [Architecture](docs/ARCHITECTURE.md) · [Privacy](docs/PRIVACY.md) · [Deployment/cost](docs/DEPLOYMENT.md).
 
 ## Roadmap and contributing
 
