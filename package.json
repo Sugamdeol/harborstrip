@@ -1,0 +1,18 @@
+{
+  "name": "harborstrip",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Review a minimal HAR packet before sharing network evidence.",
+  "engines": { "node": ">=22" },
+  "bin": { "harborstrip": "scripts/cli.js" },
+  "scripts": {
+    "dev": "node scripts/server.js",
+    "build": "node scripts/build.js",
+    "lint": "node --check src/core.js && node --check public/app.js && node --check scripts/cli.js",
+    "typecheck": "tsc -p jsconfig.json",
+    "test": "node --test tests/core.test.js",
+    "test:e2e": "node tests/e2e.js"
+  },
+  "devDependencies": { "@playwright/test": "1.58.2", "typescript": "5.9.3" }
+}

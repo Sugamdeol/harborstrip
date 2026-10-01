@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Harborstrip · Review a network packet before sharing</title>
+  <meta name="description" content="Minimize a HAR capture locally. Review strict URL aliases, a removal receipt and an offline debugging report before sharing.">
+  <meta property="og:title" content="Harborstrip · Share the network failure">
+  <meta property="og:description" content="Leave captured secrets behind. A local HAR tool and Node CLI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://harborstrip.deolsugam.chatgpt.site/">
+  <meta property="og:image" content="https://harborstrip.deolsugam.chatgpt.site/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://harborstrip.deolsugam.chatgpt.site/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#workspace">Skip to packet</a>
+<header><a class="wordmark" href="/">harborstrip<span aria-hidden="true"> /</span></a><span class="header-note">Network evidence, trimmed.</span><button id="theme" class="quiet">Dark theme</button></header>
+<main>
+  <aside aria-label="Capture and privacy settings">
+    <p class="eyebrow">Prepare for handoff</p>
+    <h1>Share the failure.<br>Leave the rest.</h1>
+    <p class="intro">Open a browser network capture. Review exactly what your packet will contain.</p>
+    <div class="import">
+      <label for="file" class="file-label">Choose a HAR file</label>
+      <input id="file" type="file" accept=".har,.json,application/json">
+      <p class="metadata">Local processing · Up to 20 MiB</p>
+      <button id="demo" class="secondary">Load synthetic demo</button>
+    </div>
+    <fieldset><legend>Outgoing URLs</legend><label class="radio"><input type="radio" name="policy" value="strict"><span><strong>Strict aliases</strong><small>Replace every host and path. Keep matching requests linked.</small></span></label><label class="radio"><input type="radio" name="policy" value="endpoints" checked><span><strong>Keep host and path</strong><small>For reviewed cases. Endpoints may contain private information.</small></span></label></fieldset>
+    <p id="policy-warning" class="warning">Hostnames and paths remain in all exports. Review the outgoing packet before sharing.</p>
+    <details><summary>What leaves the packet?</summary><p>Headers, cookies, query strings, fragments, bodies, page titles, real capture dates, IPs and extra fields are omitted.</p><p>Request order, status, method, timing and size remain. These can still reveal behavior.</p></details>
+    <details><summary>How to capture a HAR</summary><p>Open your browser DevTools, select Network, record the problem, then export the recording as HAR. A shorter capture makes review easier.</p></details>
+    <p class="local-note">Your capture stays in this tab. No upload, account or tracking.</p>
+  </aside>
+  <section id="workspace" aria-label="Outgoing packet" tabindex="-1">
+    <div class="workspace-heading"><div><p class="eyebrow">Outgoing manifest</p><h2 id="packet-title">No capture loaded</h2></div><button id="reset" class="quiet" disabled>Clear capture</button></div>
+    <p id="status" role="status" aria-live="polite">Choose a HAR or load the labelled demo to begin.</p>
+    <div id="empty" class="empty"><div class="empty-mark" aria-hidden="true">[ / ]</div><h3>A smaller packet.<br>The same request story.</h3><p>See what was removed, inspect the remaining requests, then save evidence for your ticket.</p></div>
+    <div id="results" hidden>
+      <div class="receipt-band"><div><span>Requests kept</span><strong id="count">0</strong></div><div><span>Headers removed</span><strong id="headers">0</strong></div><div><span>Payloads removed</span><strong id="bodies">0</strong></div><div><span>Failed requests</span><strong id="failed">0</strong></div></div>
+      <div class="receipt-note"><span id="receipt-label">Strict aliases applied</span><span id="size">0 bytes</span></div>
+      <div class="toolbar"><label>Find an outgoing URL<input id="search" type="search" placeholder="Search aliases or reviewed endpoints"></label><label class="check"><input id="failures" type="checkbox">Failures only</label></div>
+      <div class="table-wrap" role="region" aria-label="Request sequence" tabindex="0"><table><thead><tr><th scope="col">#</th><th scope="col">Method</th><th scope="col">Outgoing endpoint</th><th scope="col">Status</th><th scope="col">Duration</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <p id="no-matches" hidden>No matching requests. Clear the search or turn off Failures only.</p>
+      <div class="pagination"><button id="prev" class="quiet">Previous</button><span id="page">Page 1</span><button id="next" class="quiet">Next</button></div>
+      <details id="preview"><summary>Inspect exact outgoing HAR</summary><pre id="json" tabindex="0"></pre><p id="preview-note" class="metadata"></p></details>
+      <div class="exports"><div><h3>Ready for your review.</h3><p>Minimized, not a guarantee of anonymity.</p></div><div class="export-buttons"><button id="export-har" class="primary">Save clean HAR</button><button id="export-html" class="secondary">Save offline report</button><button id="export-md" class="quiet">Save Markdown</button><button id="export-receipt" class="quiet">Save receipt</button></div></div>
+    </div>
+  </section>
+</main>
+<footer><span>.crafted.by.sugam.</span><span>Harborstrip 0.1 · No production dependencies</span></footer>
+</body></html>

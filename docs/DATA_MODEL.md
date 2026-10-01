@@ -1,0 +1,3 @@
+# Memory-only model
+
+Session owns source JSON, policy, sanitized HAR, removal counters, search/page selection. No user/entity table or persistence. Request entries are ordered with transient index. Strict aliases host-N.invalid/path-N match repeated endpoints, but alias map is not exported. HAR reconstruction includes standard request/response shells, numeric timing and sizes. Unknown metadata discarded. Reset/reload clears references; garbage collection timing is browser-controlled. Output download is user's retention decision. No timestamps of real capture retained: base synthetic timestamp plus relative offsets. No migrations, indexes, foreign keys or deletion API apply.

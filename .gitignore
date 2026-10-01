@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.agents/
+.codex/
+.env
+.env.*
+!.env.example
+.sites-runtime/
+.playwright-cli/
+test-results/
+public/core.js
+.openai-tmp-ignore
+*.har
+!tests/fixtures/*.har

@@ -1,0 +1,3 @@
+# Local API
+
+No server actions, user-file endpoints or remote API. Pure functions sanitizeHar(input, {keepEndpoints=false}), reportMarkdown(result), reportHtml(result), validate input. Limits: 20 MiB JSON, 10,000 entries, finite numeric values, HTTP(S) URLs only. Validation throws plain recovery messages, never sensitive input. Deterministic and idempotent in privacy boundary: repeated application retains no captured secrets, though alias encounter mapping can rename aliases. No replay, side effects, auth, rate limiting, CORS or remote caching. Local dev server GET/HEAD supports only declared public/src paths, returns 404 otherwise. CLI writes to explicit user-selected new file and refuses overwrite.

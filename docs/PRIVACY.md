@@ -1,0 +1,3 @@
+# Privacy
+
+Files are parsed locally in browser memory or the CLI process. No analytics, account, cookies, localStorage or uploaded files. Hosting provider still sees page requests and connection metadata, but the app sends no capture content. Strict output replaces hosts and paths, removes query/fragment/userinfo, headers, cookies, request/response payloads, comments, page titles, IPs and custom properties. A generic capture filename replaces original name. Endpoint mode retains HTTP(S) host/path; review them before sharing. Request status, duration, size, relative timing and categories remain and can permit inference. No promise of complete anonymity. Downloaded files persist on your device according to your own policy.
