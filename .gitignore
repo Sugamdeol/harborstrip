@@ -12,3 +12,5 @@ public/core.js
 .openai-tmp-ignore
 *.har
 !tests/fixtures/*.har
+
+.vercel/

@@ -10,7 +10,7 @@ A local browser tool and Node CLI that reconstructs a minimal HAR packet, with s
 npm ci --ignore-scripts && npm run build && npm run dev
 ```
 
-Open http://localhost:4173 and load the labelled synthetic demo. [Hosted demo](https://harborstrip.deolsugam.chatgpt.site/).
+Open http://localhost:4173 and load the labelled synthetic demo. [Hosted demo](https://harborstrip.vercel.app/).
 
 ## Why it exists
 
